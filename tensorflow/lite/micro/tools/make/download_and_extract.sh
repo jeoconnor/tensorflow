@@ -103,14 +103,17 @@ patch_cmsis() {
     sed -i -E $'s@#include "arm_nn_types.h"@#include "cmsis/CMSIS/NN/Include/arm_nn_types.h"@g' {} \;
 
   find tensorflow/lite/micro/tools/make/downloads/cmsis \
+    -type f \
     -iname '*.*' -exec \
     sed -i -E $'s@#include "arm_math.h"@#include "cmsis/CMSIS/DSP/Include/arm_math.h"@g' {} \;
 
   find tensorflow/lite/micro/tools/make/downloads/cmsis \
+    -type f \
     -iname '*.*' -exec \
     sed -i -E $'s@#include "arm_common_tables.h"@#include "cmsis/CMSIS/DSP/Include/arm_common_tables.h"@g' {} \;
 
   find tensorflow/lite/micro/tools/make/downloads/cmsis \
+    -type f \
     -iname '*.*' -exec \
     sed -i -E $'s@#include "arm_nn_tables.h"@#include "cmsis/CMSIS/NN/Include/arm_nn_tables.h"@g' {} \;
 
